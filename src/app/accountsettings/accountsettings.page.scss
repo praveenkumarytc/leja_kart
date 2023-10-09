@@ -1,0 +1,127 @@
+ion-content {
+  .top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 9px;
+
+
+    .left-area {
+      display: flex;
+      align-items: center;
+
+      h3 {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 19px;
+        color: #000000cc;
+        margin: 0;
+        text-transform: capitalize;
+      }
+    }
+
+    .right-area {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      span {
+        color: var(--ion-color-primary);
+        text-transform: capitalize;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+
+        svg {
+          width: 24px;
+          fill: var(--ion-color-primary);
+        }
+      }
+    }
+  }
+
+  .account-info {
+    padding: 24px 26px 24px 26px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    margin-top: 24px;
+
+    .account-wrapper {
+      padding: 0 0 3px;
+      margin-bottom: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .line {
+        position: relative;
+        display: flex;
+        width: 50%;
+        overflow: hidden;
+
+        span {
+          font-size: 15px;
+          color: rgba(0, 0, 0, 0.8);
+          font-weight: 500;
+          line-height: 14px;
+          padding-right: 9px;
+          position: relative;
+        }
+      }
+
+      h4 {
+        color: rgba(0, 0, 0, 0.5);
+        text-align: right;
+        font-size: 15px;
+        line-height: 22px;
+        margin: 0;
+        // width: 47%;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .location-info {
+    padding: 24px 26px 24px 26px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    margin-top: 24px;
+
+    .location-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      ion-item {
+        --padding-start: 0;
+        --padding-end: 21px;
+
+        ion-label {
+          white-space: break-spaces;
+          line-height: 21px;
+          font-size: 14px;
+          font-weight: 400;
+          margin: 0;
+          border-right: 1px solid #747272;
+          padding: 0 13px 0 1px;
+        }
+
+        ion-radio {
+          margin-inline-end: 20px;
+          margin: 0 15px 0 0;
+        }
+      }
+
+      .remove-icon-area {
+        position: relative;
+        ion-icon {
+          font-size: 19px;
+          color: #F66306;
+          margin-right: 2px;
+        }
+      }
+    }
+  }
+}

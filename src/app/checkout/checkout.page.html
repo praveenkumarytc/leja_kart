@@ -1,0 +1,143 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button icon="chevron-back-outline" defaultHref="/tabs/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="header">checkout</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<div class="ion-padding">
+  <div class="address-wrapper-area">
+    <div class="header-area">
+      <h3>
+        Delivery Method
+      </h3>
+    </div>
+    <ion-list>
+      <ion-radio-group (ionChange)=" Check($event)" [(ngModel)]="DeliveryMethod">
+        <div class="radio-btn-wrapper">
+          <ion-item lines="none">
+            <ion-label>delivery at address</ion-label>
+            <ion-radio mode="md" slot="start" value="delivery_at_address" ></ion-radio>
+          </ion-item>
+        </div>
+        <div class="radio-btn-wrapper">
+          <ion-item lines="none">
+            <ion-label>pick up from store</ion-label>
+            <ion-radio mode="md" slot="start" value="pickup_from_store"></ion-radio>
+          </ion-item>
+        </div>
+      </ion-radio-group>
+    </ion-list>
+  </div>
+  <div class="pickup-area" *ngIf="DeliveryMethod=='pickup_from_store'">
+    <h2>shop address: <span>{{Price.shop_address}}</span></h2>
+    <h2>city: <span>{{Price.shop_city}}</span></h2>
+  </div>
+  <div class="top-header" *ngIf="DeliveryMethod=='delivery_at_address'">
+    <h2>Delivery at Address
+      <span (click)="presentModal()">
+        <ion-icon name="add-circle-outline"></ion-icon>
+        add address
+      </span>
+    </h2>
+  </div>
+  <div class="location-area" *ngIf="DeliveryMethod=='delivery_at_address'">
+    <ion-list >
+      <ion-radio-group (ionChange)="radiochecked($event)" [(ngModel)]="SelectAddress">
+        <ion-item lines="none" *ngFor="let add of Address"  >
+          
+          <ion-label>{{add.house_no}} {{add.area}} {{add.city}} {{add.state}} {{add.pincode}}</ion-label>
+          <ion-radio mode="md" color="primary" slot="start" [value]="add.id" ></ion-radio>
+          <ion-button (click)="Del_Add(add.id)" *ngIf="point== false" [disabled]="false">
+            <ion-icon name="trash-outline"  ></ion-icon>
+          </ion-button>
+          <ion-icon (click)="menu(add.id)" name="ellipsis-vertical" ></ion-icon>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+ 
+  </div>
+  <div class="payment-method">
+    <div class="header-area">
+      <h3>
+        payment method
+      </h3>
+    </div>
+    <ion-list>
+      <ion-radio-group [(ngModel)]="Paymentmethod" (ionChange)="SelectPayment()">
+        <div class="radio-btn-wrapper">
+          <ion-item lines="none">
+            <ion-label>cash on delivery</ion-label>
+            <ion-radio mode="md" slot="start" value="COD"></ion-radio>
+          </ion-item>
+        </div>
+        <div class="radio-btn-wrapper">
+          <ion-item lines="none">
+            <ion-label>Online Payment</ion-label>
+            <ion-radio mode="md" slot="start" value="Online"></ion-radio>
+          </ion-item>
+        </div>
+      </ion-radio-group>
+    </ion-list>
+  </div>
+  <div class="amount-area" >
+    <div class="inner-area">
+      <div class="left-area">
+        <span >
+          safeway subtotal 
+        </span>
+      </div>
+      <p >
+          ₹{{Price.product_price}}
+      </p>
+    </div>
+    <div class="inner-area">
+      <div class="left-area">
+        <span>
+          CGST
+        </span>
+      </div>
+      <p >
+        ₹{{Price.product_cgst_amount}}
+      </p>
+    </div>
+    <div class="inner-area" *ngIf="DeliveryMethod ==='delivery_at_address'">
+      <div class="left-area">
+        <span>
+          SGST
+        </span>
+      </div>
+      <p >
+        ₹{{Price.product_sgst_amount}} 
+      </p>
+    </div>
+    <div class="inner-area underline">
+      <div class="left-area">
+        <span>
+         Delivery Charge
+        </span>
+      </div>
+      <p >
+         ₹{{Price.delivery_charge}}
+      </p>
+    </div>
+    <div class="grand-total-area">
+      <h3>
+        total
+        <span >
+          ₹{{Price.total}}
+        </span>
+      </h3>
+    </div>
+  </div>
+</div>
+</ion-content>
+
+<ion-footer>
+  <ion-button (click)=" PlaceOrder()">
+    place order
+  </ion-button>
+</ion-footer>

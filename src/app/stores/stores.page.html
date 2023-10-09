@@ -1,0 +1,430 @@
+<ion-header mode="md">
+  <ion-toolbar style="padding: 8px">
+    <ion-buttons slot="start" mode="ios">
+      <ion-back-button
+        text=""
+        name="chevron-back-outline"
+        defaultHref="/tabs/home"
+      ></ion-back-button>
+    </ion-buttons>
+    <div class="search">
+      <ion-input placeholder="Search Shop" [(ngModel)]="search_store" (ionChange)="getstore($event)"></ion-input>
+      <img src="assets/icon/search-icon.svg" loading="lazy" alt="" />
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <div class="segment_area">
+    <div class="main-inner-wrapper">
+      <div class="filter-area" (click)="presentModal()">
+        <ion-icon name="options"></ion-icon>
+      </div>
+      <ion-segment scrollable color="primary" [(ngModel)]="type" mode="md">
+        <ion-segment-button value="popular" checked>
+          <ion-label>Popular</ion-label>
+        </ion-segment-button>
+
+        <ion-segment-button value="newest" checked>
+          <ion-label>Newest</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="recommended" checked>
+          <ion-label>Recommended</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </div>
+
+    <div class="content_wrapper" [ngSwitch]="type">
+      <div class="wrapper" *ngSwitchCase="'popular'">
+        <ion-card *ngFor="let store of Storelist | filter: search_store" (click)= "go_detail(store.id)">
+          <div class="pic-area">
+            <img [src]= "store.profile_picture" >
+            <div class="right-logo">
+              <img [src]= "store.user_details.short_image">
+            </div>
+          </div>
+          <div class="content-area">
+            <h2>{{store.name}}</h2>
+            <div class="list-item">
+              <ul >
+                <li *ngFor="let subcat of store.subcategory">
+                  {{subcat.category.category_title}}
+                  <ion-icon name="ellipse"></ion-icon>
+                </li>
+                
+              </ul>
+            </div>
+            <div class="bottom-list">
+              <div class="left-part">
+                <ul>
+                  <li>{{store.user_details.delivery_type}}</li>
+                  <li>
+                    4.6
+                    <ion-icon name="star-outline" ></ion-icon>
+                    (59 Ratings)
+                  </li>
+                </ul>
+              </div>
+              <div class="right-part"  >
+                <h3  >
+                  Status :
+                  <span> {{store.status}} </span>
+                </h3>
+              </div>
+            </div>
+          </div>
+        </ion-card>
+
+     
+      </div>
+
+      <div class="wrapper p20" *ngSwitchCase="'newest'">
+        <ion-card routerLink="/storesdetails">
+          <div class="pic-area">
+            <img src="assets/images/stores-pic-2.png" loading="lazy" alt="" />
+            <div class="right-logo">
+              <img src="assets/images/small-text-2.png" loading="lazy" alt="" />
+            </div>
+          </div>
+          <div class="content-area">
+            <h2>Walmart</h2>
+            <div class="list-item">
+              <ul>
+                <li>
+                  Grocery
+                  <ion-icon name="ellipse"></ion-icon>
+                </li>
+                <li>
+                  IceCream
+                  <ion-icon name="ellipse"></ion-icon>
+                </li>
+                <li>Breakfast</li>
+              </ul>
+            </div>
+            <div class="bottom-list">
+              <div class="left-part">
+                <ul>
+                  <li>Free Delivery</li>
+                  <li>
+                    4.6
+                    <ion-icon name="star-outline"></ion-icon>
+                    (59 Ratings)
+                  </li>
+                </ul>
+              </div>
+              <div class="right-part">
+                <h3>
+                  Status :
+                  <span> Open </span>
+                </h3>
+              </div>
+            </div>
+          </div>
+        </ion-card>
+
+        <ion-card routerLink="/storesdetails">
+          <div class="pic-area">
+            <img src="assets/images/stores-pic-1.png" loading="lazy" alt="" />
+            <div class="right-logo">
+              <img src="assets/images/small-text-1.png" loading="lazy" alt="" />
+            </div>
+          </div>
+          <div class="content-area">
+            <h2>Safeway</h2>
+            <div class="list-item">
+              <ul>
+                <li>
+                  Grocery
+                  <ion-icon name="ellipse"></ion-icon>
+                </li>
+                <li>
+                  IceCream
+                  <ion-icon name="ellipse"></ion-icon>
+                </li>
+                <li>Breakfast</li>
+              </ul>
+            </div>
+            <div class="bottom-list">
+              <div class="left-part">
+                <ul>
+                  <li>Free Delivery</li>
+                  <li>
+                    4.6
+                    <ion-icon name="star-outline"></ion-icon>
+                    (59 Ratings)
+                  </li>
+                </ul>
+              </div>
+              <div class="right-part">
+                <h3>
+                  Status :
+                  <span> Open </span>
+                </h3>
+              </div>
+            </div>
+          </div>
+        </ion-card>
+
+        <ion-card routerLink="/storesdetails">
+          <div class="pic-area">
+            <img src="assets/images/stores-pic-2.png" loading="lazy" alt="" />
+            <div class="right-logo">
+              <img src="assets/images/small-text-2.png" loading="lazy" alt="" />
+            </div>
+          </div>
+          <div class="content-area">
+            <h2>Walmart</h2>
+            <div class="list-item">
+              <ul>
+                <li>
+                  Grocery
+                  <ion-icon name="ellipse"></ion-icon>
+                </li>
+                <li>
+                  IceCream
+                  <ion-icon name="ellipse"></ion-icon>
+                </li>
+                <li>Breakfast</li>
+              </ul>
+            </div>
+            <div class="bottom-list">
+              <div class="left-part">
+                <ul>
+                  <li>Free Delivery</li>
+                  <li>
+                    4.6
+                    <ion-icon name="star-outline"></ion-icon>
+                    (59 Ratings)
+                  </li>
+                </ul>
+              </div>
+              <div class="right-part">
+                <h3>
+                  Status :
+                  <span> Open </span>
+                </h3>
+              </div>
+            </div>
+          </div>
+        </ion-card>
+
+        <ion-card routerLink="/storesdetails">
+          <div class="pic-area">
+            <img src="assets/images/stores-pic-1.png" loading="lazy" alt="" />
+            <div class="right-logo">
+              <img src="assets/images/small-text-1.png" loading="lazy" alt="" />
+            </div>
+          </div>
+          <div class="content-area">
+            <h2>Safeway</h2>
+            <div class="list-item">
+              <ul>
+                <li>
+                  Grocery
+                  <ion-icon name="ellipse"></ion-icon>
+                </li>
+                <li>
+                  IceCream
+                  <ion-icon name="ellipse"></ion-icon>
+                </li>
+                <li>Breakfast</li>
+              </ul>
+            </div>
+            <div class="bottom-list">
+              <div class="left-part">
+                <ul>
+                  <li>Free Delivery</li>
+                  <li>
+                    4.6
+                    <ion-icon name="star-outline"></ion-icon>
+                    (59 Ratings)
+                  </li>
+                </ul>
+              </div>
+              <div class="right-part">
+                <h3>
+                  Status :
+                  <span> Open </span>
+                </h3>
+              </div>
+            </div>
+          </div>
+        </ion-card>
+      </div>
+
+      <div class="wrapper p20" *ngSwitchCase="'recommended'">
+        <ion-card routerLink="/storesdetails">
+          <div class="pic-area">
+            <img src="assets/images/stores-pic-1.png" loading="lazy" alt="" />
+            <div class="right-logo">
+              <img src="assets/images/small-text-1.png" loading="lazy" alt="" />
+            </div>
+          </div>
+          <div class="content-area">
+            <h2>Safeway</h2>
+            <div class="list-item">
+              <ul>
+                <li>
+                  Grocery
+                  <ion-icon name="ellipse"></ion-icon>
+                </li>
+                <li>
+                  IceCream
+                  <ion-icon name="ellipse"></ion-icon>
+                </li>
+                <li>Breakfast</li>
+              </ul>
+            </div>
+            <div class="bottom-list">
+              <div class="left-part">
+                <ul>
+                  <li>Free Delivery</li>
+                  <li>
+                    4.6
+                    <ion-icon name="star-outline"></ion-icon>
+                    (59 Ratings)
+                  </li>
+                </ul>
+              </div>
+              <div class="right-part">
+                <h3>
+                  Status :
+                  <span> Open </span>
+                </h3>
+              </div>
+            </div>
+          </div>
+        </ion-card>
+
+        <ion-card routerLink="/storesdetails">
+          <div class="pic-area">
+            <img src="assets/images/stores-pic-2.png" loading="lazy" alt="" />
+            <div class="right-logo">
+              <img src="assets/images/small-text-2.png" loading="lazy" alt="" />
+            </div>
+          </div>
+          <div class="content-area">
+            <h2>Walmart</h2>
+            <div class="list-item">
+              <ul>
+                <li>
+                  Grocery
+                  <ion-icon name="ellipse"></ion-icon>
+                </li>
+                <li>
+                  IceCream
+                  <ion-icon name="ellipse"></ion-icon>
+                </li>
+                <li>Breakfast</li>
+              </ul>
+            </div>
+            <div class="bottom-list">
+              <div class="left-part">
+                <ul>
+                  <li>Free Delivery</li>
+                  <li>
+                    4.6
+                    <ion-icon name="star-outline"></ion-icon>
+                    (59 Ratings)
+                  </li>
+                </ul>
+              </div>
+              <div class="right-part">
+                <h3>
+                  Status :
+                  <span> Open </span>
+                </h3>
+              </div>
+            </div>
+          </div>
+        </ion-card>
+
+        <ion-card routerLink="/storesdetails">
+          <div class="pic-area">
+            <img src="assets/images/stores-pic-1.png" loading="lazy" alt="" />
+            <div class="right-logo">
+              <img src="assets/images/small-text-1.png" loading="lazy" alt="" />
+            </div>
+          </div>
+          <div class="content-area">
+            <h2>Safeway</h2>
+            <div class="list-item">
+              <ul>
+                <li>
+                  Grocery
+                  <ion-icon name="ellipse"></ion-icon>
+                </li>
+                <li>
+                  IceCream
+                  <ion-icon name="ellipse"></ion-icon>
+                </li>
+                <li>Breakfast</li>
+              </ul>
+            </div>
+            <div class="bottom-list">
+              <div class="left-part">
+                <ul>
+                  <li>Free Delivery</li>
+                  <li>
+                    4.6
+                    <ion-icon name="star-outline"></ion-icon>
+                    (59 Ratings)
+                  </li>
+                </ul>
+              </div>
+              <div class="right-part">
+                <h3>
+                  Status :
+                  <span> Open </span>
+                </h3>
+              </div>
+            </div>
+          </div>
+        </ion-card>
+
+        <ion-card routerLink="/storesdetails">
+          <div class="pic-area">
+            <img src="assets/images/stores-pic-2.png" loading="lazy" alt="" />
+            <div class="right-logo">
+              <img src="assets/images/small-text-2.png" loading="lazy" alt="" />
+            </div>
+          </div>
+          <div class="content-area">
+            <h2>Walmart</h2>
+            <div class="list-item">
+              <ul>
+                <li>
+                  Grocery
+                  <ion-icon name="ellipse"></ion-icon>
+                </li>
+                <li>
+                  IceCream
+                  <ion-icon name="ellipse"></ion-icon>
+                </li>
+                <li>Breakfast</li>
+              </ul>
+            </div>
+            <div class="bottom-list">
+              <div class="left-part">
+                <ul>
+                  <li>Free Delivery</li>
+                  <li>
+                    4.6
+                    <ion-icon name="star-outline"></ion-icon>
+                    (59 Ratings)
+                  </li>
+                </ul>
+              </div>
+              <div class="right-part">
+                <h3>
+                  Status :
+                  <span> Open </span>
+                </h3>
+              </div>
+            </div>
+          </div>
+        </ion-card>
+      </div>
+    </div>
+  </div>
+</ion-content>

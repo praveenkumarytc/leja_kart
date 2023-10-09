@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        icon="chevron-back-outline"
+        defaultHref="/stores"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-title class="header">Stores details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="Pageload == false">
+  <div class="stores-bg-area">
+    <div class="pic-area">
+      <img [src] ="storedetail.profile_picture" >
+      <div class="stores-logo">
+        <img [src] ="userdetail.short_image" >
+      </div>
+    </div>
+    <div class="content-area">
+      <h2>{{storedetail.name}}</h2>
+      <div class="list-item">
+        <ul>
+          <li *ngFor="let cat of store">
+            {{cat.category.category_title}}
+            <ion-icon name="ellipse"></ion-icon>
+          </li>
+        </ul>
+      </div>
+      <div class="rating-info" >
+        <ul>
+          <li>{{userdetail.delivery_type}}</li>
+          <li routerLink="/rating-review">
+            {{Rating_review.rating}}
+            <ion-icon name="star-outline"></ion-icon>
+          ( {{Rating_review.rating_review_count}} )
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="segment_area">
+      <div class="main-inner-wrapper"  >
+        <ion-segment scrollable color="primary" [(ngModel)]="type" mode="md">
+          <ion-segment-button value="{{cat}}" *ngFor = "let cat of category"  (click)="StoreProduct(cat)">
+            <ion-label>{{cat}}</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+      </div>
+
+      <div class="content_wrapper" [ngSwitch]="type">
+        <div class="wrapper" >
+          <ion-row >
+            <ion-col size="6" *ngFor="let prod of products" (click)="go_detail(prod.id)">
+              <ion-card>
+                <div class="pic-area">
+                  <img
+                    [src]="prod.image_array[0]">
+                </div>
+                <div class="content-area">
+                  <h3>{{prod.title}}</h3>
+                  <p [innerHTML]="prod.description"></p>
+                </div>
+                <div class="price-area">
+                  <h3>₹ {{prod.discount_price}}<span class="price"> ₹ {{prod.price}}</span></h3>
+                </div>
+                <p>
+                  Seller :
+                  <span class="product">
+                    {{prod.seller_name[0].name}}
+                  </span>
+                </p>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer mode="ios" *ngIf="Pageload == false">
+  <div class="high">
+    <ion-button (click)="presentModal()">Brand <ion-icon name="chevron-down-outline"></ion-icon></ion-button>
+    <ion-button (click)="presentModalsecond()">Sort <ion-icon name="chevron-down-outline"></ion-icon></ion-button>
+  </div>
+</ion-footer>

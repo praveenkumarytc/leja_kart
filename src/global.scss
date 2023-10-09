@@ -1,0 +1,266 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import "~@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+// google font link here //
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Jost:wght@100;200;300;400;500;600;700;800;900&family=Libre+Baskerville:wght@400;700&family=Libre+Franklin:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100&family=Roboto:wght@100;300;400;500&display=swap");
+* {
+  font-family: "Libre Franklin", sans-serif;
+  border: 0;
+  outline: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+input,
+textarea,
+ion-buttons {
+  font-family: "Libre Franklin", sans-serif;
+}
+
+ion-input {
+  font-family: "Libre Franklin", sans-serif;
+}
+
+ion-textarea {
+  font-family: "Libre Franklin", sans-serif;
+}
+
+p {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+// ion-button {
+//   box-shadow: inherit !important;
+// }
+
+.button-solid {
+  background: transparent;
+}
+
+input:focus {
+  outline: none !important;
+}
+
+.btn-transparent {
+  --background: transparent !important;
+  --color: #000 !important;
+  --box-shadow: none;
+  margin-top: 9px !important;
+  font-size: 0.9rem !important;
+}
+
+.button {
+  font-size: 0.9rem;
+  text-align: center;
+  // margin-top: 30px;
+  font-family: "Libre Franklin", sans-serif;
+  text-transform: uppercase;
+  white-space: unset;
+  font-weight: 500;
+  // --background: #213a72;
+  --border-radius: 30px;
+}
+
+.button:focus {
+  outline: none !important;
+}
+
+ion-header {
+  // .button {
+  //   --background: transparent!important;
+  //   --color: #fff!important;
+  //   --box-shadow: none;
+  //   margin: 0;
+  //   font-size: 14px !important;
+  //   margin-left: 10px !important;
+  // }
+  ion-title {
+    font-family: "Libre Franklin", sans-serif;
+    font-size: 15px;
+    text-transform: capitalize;
+    font-weight: 400;
+  }
+
+  .header {
+    padding: 0;
+  }
+
+  ion-buttons {
+  }
+
+  .btn-right {
+    margin-right: 15px;
+
+    img {
+      width: 20px;
+    }
+  }
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+
+  li {
+    font-family: "Libre Franklin", sans-serif;
+    list-style-type: none;
+  }
+}
+
+ion-toast {
+  font-family: "Libre Franklin", sans-serif;
+}
+
+ion-label {
+  font-family: "Libre Franklin", sans-serif !important;
+}
+
+.searchbar-input.sc-ion-searchbar-md {
+  font-size: 15px !important;
+  box-shadow: none !important;
+  border: 1px solid #b2b3b2;
+  font-family: "Libre Franklin", sans-serif !important;
+}
+
+.searchbar-input.sc-ion-searchbar-ios {
+  font-size: 15px !important;
+  box-shadow: none !important;
+  border: 1px solid #b2b3b2;
+  font-family: "Libre Franklin", sans-serif !important;
+}
+
+ion-item {
+  font-family: "Libre Franklin", sans-serif !important;
+}
+
+.select-text {
+  font-family: "Libre Franklin", sans-serif !important;
+}
+
+small {
+  font-family: "Libre Franklin", sans-serif !important;
+  font-size: 14px;
+}
+
+// .swiper-pagination {
+//   position: relative;
+//   bottom: 0 !important;
+// }
+
+.swiper-pagination-bullet {
+  background: #acadae;
+}
+.swiper-pagination-bullet-active {
+  background: #ffffff !important;
+}
+
+.title {
+  padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: capitalize;
+  color: #061c05;
+  font: 900 20px/27px "Libre Baskerville", serif;
+
+  span {
+    ion-button {
+      font-family: "Libre Franklin", sans-serif;
+      font-size: 12px;
+      color: #061c05;
+      --background: transparent;
+      --box-shadow: none;
+      border: 1px solid #474a47;
+      border-radius: 18px;
+      text-transform: uppercase;
+      margin-top: 0;
+      height: 33px;
+      --padding-start: 21px;
+      --padding-end: 21px;
+    }
+  }
+}
+
+.account-edit-modal {
+  --height: 85% !important;
+  --border-radius: 18px 18px 0 0 !important;
+  align-items: flex-end !important;
+}
+
+.my-payment-detail {
+  --height: 80% !important;
+  --border-radius: 18px 18px 0 0 !important;
+  align-items: flex-end !important;
+}
+
+.my-custom-class {
+  --max-width: 150px;
+}
+
+.filter-shop-popup {
+  --height: 80% !important;
+  --border-radius: 18px 18px 0 0 !important;
+  align-items: flex-end !important;
+}
+.add-address-popup{
+  --height: 80% !important;
+  --border-radius: 18px 18px 0 0 !important;
+  align-items: flex-end !important;
+}
+ion-loading.loader_class {
+  --background: #FAFAFA;
+  // --spinner-color: rgba(239, 210, 65, 0.88);
+  --spinner-color: var (--ion-color-primary);
+  color: var(--ion-color-primary);
+  .loading-wrapper {
+    border-radius: 100%;
+    width: 80px;
+    height: 80px;
+  }
+ }
+ .brand-popup{
+  --border-radius: 18px 18px 0 0 !important;
+  align-items: flex-end !important;
+  --height: 85% !important;
+}
+.sort-popup{
+  --border-radius: 18px 18px 0 0 !important;
+  align-items: flex-end !important;
+  --height: 75% !important;
+}
+
+.location-modal {
+  --height: 80% !important;
+  --border-radius: 18px 18px 0 0 !important;
+  align-items: flex-end !important;
+}

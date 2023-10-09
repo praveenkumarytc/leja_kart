@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button icon="chevron-back-outline" defaultHref="/tabs/category"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="header">categories list</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list >
+      <ion-item lines="none" *ngFor="let item of Subcat_list" (click)="go_productlist(item.category_id,item.id)">
+          <ion-avatar slot="start">
+              <img [src]="item.subcategory_image">
+          </ion-avatar>
+          <ion-label>
+              <h2>{{item.subcategory_title}}</h2>
+              <!-- <p>Put some little content to fit here</p> -->
+          </ion-label>
+      </ion-item>  
+
+  </ion-list>
+</ion-content>

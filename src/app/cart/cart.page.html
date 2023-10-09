@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button icon="chevron-back-outline" defaultHref="/tabs/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="header">cart</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content *ngIf="pageload == false">
+  <div class="cart-block">
+    <div class="top" *ngIf="allCart.length>0">
+      <ul>
+        <li>
+        {{store_name.name}}
+        </li>
+        <li>
+          <h3>
+            ₹ {{store_price}}
+          </h3>
+        </li>
+      </ul>
+    </div>
+    <div class="cart-block">
+      <div class="cart-wrapper" *ngFor="let item of allCart;let i=index;">
+        <div class="pro">
+          <img [src]="item.image_arry[0]">
+        </div>
+        <div class="title">
+          <h2>{{item.title}}
+            <ion-button (click)= "DeleteCart(item.id)">
+              <ion-icon name="close-circle"></ion-icon>
+            </ion-button>
+          </h2>
+          <div class="last">
+            <div class="text">
+              <h4>₹ {{item.actual_price2}}</h4>
+              <h3>₹ {{item.discount_price2}}</h3>
+            </div>
+            <div class="product-gst-price">
+              <h5>gst amount: ₹ {{item.gst_amount}}</h5>
+            </div>
+            <div class="increment-block">
+              <div class="first"> <ion-icon name="remove-outline" (click)="DecreaseQty(item,i)"></ion-icon>
+                </div>
+              {{item.quantity}}
+              <div class="last"> <ion-icon name="add-outline" (click)="IncreaseQty(item,i)"></ion-icon></div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom" *ngIf="allCart.length>0">
+    <ion-button fill="outline" routerLink="/home">Buy More</ion-button>
+    <ion-button (click)="goCheckout()">Checkout</ion-button>
+  </div>
+
+  <div class="box"  *ngIf="allCart.length==0 " >
+    <div class="photo">
+      
+        <img src="../../assets/images/Empty cart.png" loading="lazy" alt=""/>
+      
+      <h3 >
+        Your cart is empty!
+      </h3>
+      <p>
+        Add Items to it now. 
+      </p>
+      <ion-button color="primary" routerLink="/home">shop now</ion-button>
+    </div>
+  </div>
+
+</ion-content>

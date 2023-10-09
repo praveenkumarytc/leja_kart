@@ -1,0 +1,89 @@
+ion-content {
+  .add {
+    padding: 12px 20px;
+
+    .border {
+      width: 119px;
+      height: 5px;
+      border-radius: 10px;
+      background: #4a4b4d66;
+      margin: 0 auto 40px;
+    }
+
+    h3 {
+      margin: 0 0 20px;
+      padding-bottom: 17px;
+      font: 800 13px/16px "Libre Franklin", sans-serif;
+      border-bottom: 1px solid #7070701a;
+    }
+
+    .form-part {
+      margin-top: 15px;
+
+      ion-list {
+        margin: 0 0;
+        padding: 0;
+        background: transparent;
+
+        ion-item {
+          border-radius: 25px;
+          margin-bottom: 19px;
+          --inner-padding-end: 0;
+          --background: #EAEDF5;
+          --min-height: 56px;
+
+          &:last-child {
+            margin: 0;
+          }
+
+          ion-icon {
+            margin: 0 17px 0 17px;
+          }
+
+          ion-input {
+            font-size: 15px;
+            --placeholder-color: #0d0e1080;
+            --placeholder-opacity: 1;
+            --padding-start: 16px;
+          }
+        }
+
+        .flex {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 20px;
+
+          p {
+            margin: 0;
+            font: 14px/21px "Libre Franklin", sans-serif;
+            color: #7C7D7E;
+          }
+
+          ion-item {
+            width: 100px;
+            margin-bottom: 0;
+          }
+
+        }
+      }
+
+    }
+  }
+}
+
+ion-footer {
+  padding: 20px;
+  background: #F8F9FD;
+
+  ion-button {
+    width: 100%;
+    margin: 0 0px 0;
+    height: 60px;
+    font: 500 16px/19px "Libre Franklin", sans-serif;
+  }
+}
+
+.footer-md::before {
+  display: none;
+}

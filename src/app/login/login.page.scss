@@ -1,0 +1,249 @@
+ion-content {
+  .scroll-content {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    z-index: 1;
+    display: block;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    will-change: scroll-position;
+    contain: size style layout;
+
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      background-color: #fff;
+
+      .top_area {
+        display: flex;
+        justify-content: center;
+        height: 160px;
+        background-size: cover;
+        position: relative;
+        background-repeat: no-repeat;
+        background-position: center center;
+        flex: 1;
+
+        &::after {
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 150px;
+          height: 150px;
+          content: "";
+          background-image: url(../../assets/images/circle-shape.svg);
+          background-size: cover;
+          opacity: 0.5;
+        }
+
+        .top_content {
+          z-index: 2;
+          position: relative;
+          padding: 0 16px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          height: calc(100% - -9px);
+          .logo-area{
+            position: relative;
+            img{
+              width: 66px;
+            }
+          }
+
+          ion-toolbar {
+            --background: transparent;
+            --padding-start: 0;
+
+            ion-buttons {
+              ion-back-button {
+                color: #fff;
+                --background: transparent;
+                font-size: 13px;
+                --padding-start: 0;
+              }
+            }
+          }
+
+          h2 {
+            text-align: left;
+            font-weight: 700;
+            font-size: 19px;
+            color: #fff;
+            margin-top: 6px;
+            text-transform: capitalize;
+          }
+        }
+
+        .abstract_shape {
+          background: #fbc541;
+          background: linear-gradient(156deg, #fac24b 0, #e9ba6f 100%);
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+        }
+      }
+
+      .bottom_area {
+        -webkit-box-flex: 3;
+        -webkit-flex: 3;
+        -ms-flex: 3;
+        flex: 3;
+        position: relative;
+        bottom: 7px;
+
+        .form_area {
+          padding: 16px 32px;
+          position: relative;
+          z-index: 1;
+          background-color: #fff;
+          border-radius: 12px;
+          overflow: hidden;
+
+          ion-list {
+            ion-list-header {
+              padding-left: 0;
+
+              ion-label {
+                margin: 13px 8px 13px 0;
+                margin-bottom: 0;
+
+                h2 {
+                  font-weight: 700;
+                  color: #222;
+                  text-align: left;
+                  text-transform: capitalize;
+                  font-size: 22px;
+                }
+
+                p {
+                  text-align: left;
+                  color: #8e8e8e;
+                  margin: 8px 0 0;
+                  font-size: 14px;
+                  font-weight: 400;
+                  text-transform: capitalize;
+                }
+              }
+            }
+          }
+
+          .my-form {
+            position: relative;
+            margin-top: 20px;
+
+            ion-item {
+              ion-label {
+                color: #999;
+                font-size: 15px;
+                text-transform: capitalize;
+              }
+
+              ion-input {
+                font-size: 15px;
+                color: #444;
+              }
+            }
+
+            .button-area {
+              position: relative;
+              margin-top: 10px;
+
+              ion-button {
+                --background: linear-gradient(156deg, #fbc541, #f5ad89);
+                width: 100%;
+                height: 45px;
+                --box-shadow: none;
+                --border-radius: 7px;
+                margin-top: 8px;
+              }
+            }
+
+            .middle {
+              display: flex;
+              justify-content: center;
+              height: 20px;
+              margin: 16px 0 10px 0;
+
+              &::before {
+                content: "";
+                position: absolute;
+                border-bottom: 1px solid #dbd2d2;
+                left: 16px;
+                overflow: hidden;
+                letter-spacing: 3px;
+                right: 16px;
+                margin: 8px 0 0;
+              }
+
+              span {
+                font-size: 14px;
+                color: #212121;
+                line-height: 19px;
+                padding: 0 8px;
+                background: #fff;
+                position: relative;
+                font-weight: 400;
+                display: block;
+              }
+            }
+
+            .social-media {
+              width: 170px;
+              margin: 0 auto 28px;
+
+              ul {
+                padding: 0;
+                margin: 0;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                li {
+                  list-style: none;
+
+                  img {
+                    width: 44px;
+                    height: 44px;
+                  }
+                }
+              }
+            }
+
+            .right-area {
+              position: relative;
+              margin-top: 16px;
+              text-align: right;
+
+              h2 {
+                color: #222;
+                margin: 0;
+                font-size: 13px;
+              }
+            }
+
+            .sign {
+              font-size: 14px;
+              line-height: 19px;
+              color: #9E9E9E;
+              text-align: center;
+              margin-top: 20px;
+
+              span {
+                color: #FE6565;
+                font-weight: 600;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

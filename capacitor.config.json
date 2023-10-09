@@ -1,0 +1,16 @@
+{
+  "appId": "com.customer.lejakart",
+  "appName": "Lejakart",
+  "webDir": "www",
+  "bundledWebRuntime": false,
+  "plugins": {
+    "GoogleAuth": {
+      "scopes": [
+        "profile",
+        "email"
+      ],
+      "serverClientId": "390736558591-dhnjd7omdqb4ukqhe1aiu7900mvj00d9.apps.googleusercontent.com",
+      "forceCodeForRefreshToken": "true"
+    }
+  }
+}

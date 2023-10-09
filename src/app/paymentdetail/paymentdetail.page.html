@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button icon="chevron-back-outline" defaultHref="/tabs/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="header">Payment details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="add">
+    <h2>Customize your payment methods</h2>
+    <p>Add and choose your payment method</p>
+    <div class="box">
+    <div class="flex">
+      Cash/Card on delivery <ion-icon name="checkmark-outline"></ion-icon>
+    </div>
+      <ion-item class="ion-no-padding" *ngFor="let card of Card_Detail">
+        <img src="assets/icon/visa.png" loading="lazy" alt=""/>
+         <ion-input >{{card.card_no}}</ion-input>
+        <ion-button shape="round" slot="end" (click)="Delete_Card(card.id)">Delete Card</ion-button>
+      </ion-item>
+      <h4>Other Methods</h4>
+    </div>
+  </div>
+  </ion-content>
+  <ion-footer mode="md">
+    <ion-button shape="round" (click)="presentModal()"><ion-icon name="add-outline"></ion-icon> Add another Credit/Debit Card</ion-button>
+  </ion-footer>

@@ -1,0 +1,36 @@
+ion-content {
+  ion-list {
+    position: relative;
+
+    ion-item {
+      &:nth-child(odd) {
+        --background: white;
+      }
+
+      ion-avatar {
+        width: 45px;
+        height: 45px;
+
+        img {
+          border-radius: 0;
+        }
+      }
+
+      ion-label {
+        h2 {
+          color: rgba(0, 0, 0, 0.88);
+          font-size: 15px;
+          margin: 0;
+          font-weight: 500;
+          text-transform: capitalize;
+        }
+
+        p {
+          color: rgba(0, 0, 0, 0.61);
+          font-size: 14px;
+          margin: 8px 0 0 0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "quantamnew",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,90 @@
+<ion-content>
+  <div class="scroll-content">
+    <div class="wrapper">
+      <div class="top_area">
+        <div class="top_content">
+          <!-- <ion-toolbar>
+            <ion-buttons slot="start">
+              <ion-back-button
+                mode="md"
+                text=""
+                name="md-arrow-back"
+                defaultHref="start"
+              ></ion-back-button>
+            </ion-buttons>
+          </ion-toolbar> -->
+          <div class="logo-area">
+            <img src="assets/images/logo.png" loading="lazy" alt="" />
+          </div>
+          <!-- <h2>Login</h2> -->
+        </div>
+        <div class="abstract_shape"></div>
+      </div>
+      <div class="bottom_area">
+        <div class="form_area">
+          <ion-list>
+            <ion-list-header>
+              <ion-label>
+                <h2>Welcome Back</h2>
+                <p>hello there, please login to continue</p>
+              </ion-label>
+            </ion-list-header>
+          </ion-list>
+          <div class="my-form">
+            <ion-list>
+              <ion-item class="ion-no-padding">
+                <ion-label position="floating">Username/Email</ion-label>
+                <ion-input type="text" value="" [(ngModel)]="email"></ion-input>
+              </ion-item>
+            </ion-list>
+            <ion-list>
+              <ion-item class="ion-no-padding">
+                <ion-label position="floating">Mobile No</ion-label>
+                <ion-input
+                  type="tel"
+                  placeholder=""
+                  maxlength="10"
+                  [(ngModel)]="mobile"
+                ></ion-input>
+              </ion-item>
+            </ion-list>
+            <ion-list>
+              <ion-item class="ion-no-padding">
+                <ion-label position="floating">password</ion-label>
+                <ion-input
+                  type="password"
+                  placeholder=""
+                  [(ngModel)]="pwd"
+                ></ion-input>
+              </ion-item>
+            </ion-list>
+            <div class="right-area">
+              <h2 routerLink="/forgotpassword">Forgot Password ?</h2>
+            </div>
+            <div class="button-area">
+              <ion-button (click)="Login()">login</ion-button>
+            </div>
+            <div class="middle">
+              <span>or</span>
+            </div>
+            <div class="social-media">
+              <ul>
+                <li>
+                  <img src="assets/images/facebook.png" loading="lazy" alt="" />
+                </li>
+                <li >
+                  <img src="assets/images/google.png" loading="lazy" alt="" />
+                </li>
+              </ul>
+            </div>
+
+            <div class="sign">
+              Don't have an account?
+              <span routerLink="/register"> Sign up </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

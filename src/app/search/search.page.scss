@@ -1,0 +1,189 @@
+ion-header {
+  ion-toolbar {
+    ion-back-button {
+      color: #464343;
+    }
+
+    .search {
+      border-radius: 19px;
+      border: 1px solid #4e524d61;
+      padding: 0 16px;
+      margin: 0 0px 0 12px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      font-weight: 400;
+
+      img {
+        width: 17px;
+        opacity: 0.65;
+      }
+
+      ion-input {
+        font-size: 14px;
+        color: #313131;
+        line-height: 22px;
+        font-weight: 400;
+        --padding-start: 0;
+      }
+    }
+  }
+}
+
+
+ion-content {
+  .top {
+    padding: 11px;
+    float: left;
+    width: 100%;
+
+    .product1 {
+      margin-bottom: 18px;
+      float: left;
+      width: 100%;
+
+      .products-wrapper {
+        position: relative;
+        width: 100%;
+        // box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        padding: 3px;
+        border-radius: 10px;
+
+
+        .product-inner {
+          position: relative;
+          background: #FFFFFF;
+          border-radius: 20px;
+          padding: 10px 6px 10px 6px;
+
+          .product-pic {
+            position: relative;
+
+            img {
+              width: 100%;
+              height: 100px;
+              object-fit: contain;
+            }
+          }
+        }
+
+        span {
+          width: 41px;
+          height: 41px;
+          background-color: #F25C08;
+          color: #fff;
+          position: absolute;
+          border-radius: 50%;
+          font-size: 8px;
+          right: -11%;
+          z-index: 999;
+          bottom: 87%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .product-content {
+          position: relative;
+
+          h2 {
+            text-align: left;
+            color: #141414;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 21px;
+            margin: 12px 0 18px 0;
+          }
+
+          .seller-area {
+            position: relative;
+
+            p {
+              display: flex;
+              color: #061C05;
+              font-weight: 600;
+              font-size: 14px;
+              text-align: left;
+              line-height: 16px;
+              text-transform: capitalize;
+              padding-bottom: 16px;
+              border-bottom: 1px solid #061C05;
+
+              span {
+                color: #F25C08;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 16px;
+                margin-left: 5px;
+                text-transform: capitalize;
+              }
+
+              .product {
+                width: auto;
+                height: auto;
+                background-color: transparent;
+                position: relative;
+                right: 0;
+                bottom: 0;
+              }
+            }
+          }
+
+          .price-area {
+            position: relative;
+            text-align: left;
+
+            h3 {
+              color: #061C05;
+              font-weight: 700;
+              line-height: 19px;
+              font-size: 16px;
+              margin: 16px 0 12px 0;
+              display: flex;
+
+              span {
+                text-decoration: line-through;
+                color: #5A5A5A;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 16px;
+                margin-left: 11px;
+              }
+
+              .price {
+                width: auto;
+                height: auto;
+                background-color: transparent;
+                position: relative;
+                right: 0;
+                bottom: 0;
+              }
+            }
+          }
+
+          .rating-area {
+            position: relative;
+
+            ul {
+              display: flex;
+              align-items: center;
+              justify-content: flex-start;
+
+              li {
+                color: #061C05;
+                font-size: 12px;
+                font-weight: 400;
+                line-height: 14px;
+                margin-right: 6px;
+
+                svg {
+                  fill: #061C05;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

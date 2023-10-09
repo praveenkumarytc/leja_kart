@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>add address</ion-title> 
+      <ion-buttons slot="end">
+          <ion-button color="dark" (click)="closeModal()">
+            <ion-icon slot="end" name="close-outline"></ion-icon>
+          </ion-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="form-wrapper">
+  <ion-list>
+    <ion-item lines="none" class="ion-no-padding">
+      <ion-input type="text" placeholder="FullName" [(ngModel)]="FullName"></ion-input>
+    </ion-item>
+    <ion-item lines="none" class="ion-no-padding">
+      <ion-input type="number" placeholder="Mobile No" [(ngModel)]="MobileNo"></ion-input>
+    </ion-item>
+    <ion-item lines="none" class="ion-no-padding">
+      <ion-input type="text" placeholder="State"  [(ngModel)]="State"></ion-input>
+    </ion-item>
+    <ion-item lines="none" class="ion-no-padding">
+      <ion-input type="number" placeholder="Pincode" maxlength="6" [(ngModel)]="Pincode"></ion-input>
+    </ion-item>
+    <ion-item lines="none" class="ion-no-padding">
+      <ion-input type="text" placeholder="City"  [(ngModel)]="City"></ion-input>
+    </ion-item>
+    <ion-item lines="none" class="ion-no-padding">
+      <ion-input type="text" placeholder="Area" [(ngModel)]="Area"></ion-input>
+    </ion-item>
+    <ion-item lines="none" class="ion-no-padding">
+      <ion-input type="text" placeholder="Flat" [(ngModel)]="Flat"></ion-input>
+    </ion-item>
+     <ion-item lines="none" class="ion-no-padding">
+      <ion-input type="text" placeholder="House Number"  [(ngModel)]="House_no"></ion-input>
+    </ion-item>
+    <ion-item lines="none" class="ion-no-padding">
+      <ion-input type="text" placeholder="LandMark"  [(ngModel)]="Landmark"></ion-input>
+    </ion-item>
+    
+  </ion-list>
+  </div>
+</ion-content>
+
+<ion-footer mode="ios">
+  <div class="high">
+    <ion-button fill="outline" (click)="Address()">Submit</ion-button>
+    <!-- <ion-button>Submit</ion-button> -->
+  </div>
+</ion-footer>

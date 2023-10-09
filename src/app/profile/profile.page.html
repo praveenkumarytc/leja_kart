@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button icon="chevron-back-outline" defaultHref="/tabs/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="header">Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="top">
+    <ion-item lines="none" class="ion-no-padding">
+      <ion-avatar>
+        <img [src]="selectedImage?.webPath" loading="lazy" alt=""/>
+        <ion-button class="box">
+          <img src="assets/icon/cam.svg" loading="lazy" alt="" (click)="Get_Picture()"/>
+        </ion-button>
+      </ion-avatar>
+      <ion-label>
+        <h4 *ngIf="api.user_id">{{api.name}}</h4>
+      </ion-label>
+    </ion-item>
+  </div>
+  <div class="add">
+    <ion-item lines="none" routerLink="/accountsettings">
+      <ion-avatar slot="start">
+        <ion-icon name="settings-outline"></ion-icon>
+      </ion-avatar>
+      Account Settings
+      <ion-buttons slot="end">
+        <img src="assets/icon/next.png" loading="lazy" alt=""/>
+      </ion-buttons>
+    </ion-item>
+    <ion-item lines="none" routerLink="/paymentdetail">
+      <ion-avatar slot="start">
+        <ion-icon name="card-outline"></ion-icon>
+      </ion-avatar>
+      Payment Method
+      <ion-buttons slot="end">
+        <img src="assets/icon/next.png" loading="lazy" alt=""/>
+      </ion-buttons>
+    </ion-item>
+    <ion-item lines="none" routerLink="/orders">
+      <ion-avatar slot="start">
+        <ion-icon name="cube-outline"></ion-icon>
+      </ion-avatar>
+      Orders
+      <ion-buttons slot="end">
+        <img src="assets/icon/next.png" loading="lazy" alt=""/>
+      </ion-buttons>
+    </ion-item>
+    <ion-item lines="none" routerLink="/aboutus">
+      <ion-avatar slot="start">
+        <ion-icon name="alert-circle-outline"></ion-icon>
+      </ion-avatar>
+      About
+      <ion-buttons slot="end">
+        <img src="assets/icon/next.png" loading="lazy" alt=""/>
+      </ion-buttons>
+    </ion-item>
+  </div>
+</ion-content>

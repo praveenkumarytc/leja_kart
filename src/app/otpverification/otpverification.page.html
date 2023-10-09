@@ -1,0 +1,59 @@
+<ion-content>
+  <div class="scroll-content">
+    <div class="wrapper">
+      <div class="top_area">
+        <div class="top_content">
+          <ion-toolbar>
+            <ion-buttons slot="start">
+              <ion-back-button
+                mode="md"
+                text=""
+                name="md-arrow-back"
+                defaultHref="forgotpassword"
+              ></ion-back-button>
+            </ion-buttons>
+          </ion-toolbar>
+          <h2>OTP verification</h2>
+        </div>
+        <div class="abstract_shape"></div>
+      </div>
+      <div class="bottom_area">
+        <div class="form_area">
+          <ion-list>
+            <ion-list-header>
+              <ion-label>
+                <h2>enter verification code</h2>
+                <p>
+                  We have sent OTP on your Email Address
+                </p>
+              </ion-label>
+            </ion-list-header>
+          </ion-list>
+          <div class="my-form">
+            <div class="parent">
+
+              <ion-item class="ion-no-padding">
+                  <ion-input type="tel" [(ngModel)]="number1" maxlength="1"  tabindex="1" #a (keyup)="moveFocus(b, $event, a)" (ionChange)="generateNumber()"></ion-input>
+              </ion-item>
+      
+              <ion-item class="ion-no-padding">
+                  <ion-input type="tel" [(ngModel)]="number2" maxlength="1"  tabindex="2" #b (keyup)="moveFocus(c, $event, a)" (ionChange)="generateNumber()"></ion-input>
+              </ion-item>
+      
+              <ion-item class="ion-no-padding">
+                  <ion-input type="tel" [(ngModel)]="number3" maxlength="1"  tabindex="3" #c (keyup)="moveFocus(d, $event, b)" (ionChange)="generateNumber()"></ion-input>
+              </ion-item>
+      
+              <ion-item class="ion-no-padding">
+                  <ion-input type="tel" [(ngModel)]="number4" maxlength="1" tabindex="4" #d (keyup)="moveFocus(d, $event, c)" (ionChange)="generateNumber()"></ion-input>
+              </ion-item>
+          </div>
+            <div class="button-area">
+              <ion-button (click) = "VerifyPassword()" [disabled]="access">submit</ion-button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

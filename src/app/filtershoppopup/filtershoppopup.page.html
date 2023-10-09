@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Filter Options</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="dark" (click)="closeModal()">
+        <ion-icon slot="end" name="close-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="main-wrapper">
+    <ion-list>
+      <ion-item lines="none">
+        <ion-label>Fruits</ion-label>
+        <ion-checkbox color="primary" slot="end"></ion-checkbox>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-label>Vegetables</ion-label>
+        <ion-checkbox color="primary" slot="end"></ion-checkbox>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-label>Fashion</ion-label>
+        <ion-checkbox color="primary" slot="end"></ion-checkbox>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-label>Bakery</ion-label>
+        <ion-checkbox color="primary" slot="end"></ion-checkbox>
+      </ion-item>
+      <ion-item style="border: none" lines="none">
+        <ion-label>grocery kirana</ion-label>
+        <ion-checkbox color="primary" slot="end"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
+<ion-footer mode="ios">
+  <div class="high">
+    <ion-button fill="outline">Clear All</ion-button>
+    <ion-button>Apply Filter</ion-button>
+  </div>
+</ion-footer>

@@ -1,0 +1,106 @@
+ion-content {
+  .top {
+    background: #FFFFFF;
+    border-radius: 0 0 32px 32px;
+    padding: 24px 20px;
+    box-shadow: 0 0 20px #00000014;
+
+    ion-item {
+      ion-avatar {
+        width: 80px;
+        height: 80px;
+        margin: 0 16px 0 0;
+        position: relative;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          margin: 0 16px 0 0;
+        }
+
+        ion-button {
+          position: absolute;
+          bottom: 0;
+          --background: rgb(0 0 0 / 26%);
+          margin: 0;
+          height: 31px;
+          --padding-end: 0;
+          text-align: center;
+          align-items: center;
+          width: 80px;
+          --border-radius: 0;
+
+          img {
+            width: inherit;
+            height: inherit;
+          }
+        }
+      }
+
+      ion-label {
+        margin: 0;
+
+        h4 {
+          margin: 0 0 7px 0;
+          font: 700 17px/24px "Libre Franklin", sans-serif;
+          color: #3e3c3c;
+          text-transform: capitalize;
+        }
+
+        p {
+          margin: 0 0 0px 0;
+          font: 500 14px/17px 'Libre Franklin', sans-serif;
+          color: var(--ion-color-primary);
+
+          img {
+            margin-right: 8px;
+
+            &:last-child {
+              margin-left: 8px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .add {
+    padding: 20px;
+
+    ion-item {
+      --border-radius: 12px;
+      box-shadow: 0 0 20px #00000014;
+      border-radius: 12px;
+      --min-height: 64px;
+      font: 500 15px/18px "Roboto";
+      color: #101010;
+      margin-bottom: 16px;
+
+      ion-avatar {
+        width: 45px;
+        height: 45px;
+        margin: 0 28px 0 0;
+        background: #EAEDF5;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+          border-radius: 0;
+          object-fit: fill;
+        }
+        ion-icon{
+          font-size: 18px;
+          color: #2a2929;
+        }
+      }
+      ion-buttons{
+        img{
+          width: 9px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button icon="chevron-back-outline" defaultHref="/tabs/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="header">Order list</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="order-wrapper">
+    <div class="order-inner" *ngFor="let data of Order" (click)="Go_OrderDetail(data.id)">
+      <div class="top-area">
+        <p>
+          {{data.date}}, {{data.time}}
+          <span>
+            ₹ {{data.total_price}}
+          </span>
+        </p>
+      </div>
+      <ion-list>
+        <div class="wrapper-area">
+          <ion-item lines="none">
+            <ion-avatar slot="start">
+              <img [src]="data.image_array[0]">
+            </ion-avatar>
+            <ion-label>
+              <h2>{{data.product.title}} × {{data.quantity}}</h2>
+              <ul>
+                <li [innerHTML]="data.product.description">
+
+                </li>
+              </ul>
+            </ion-label>
+            <div class="right-area" slot="end">
+              <p>
+                ₹ {{data.total_price}}
+              </p>
+            </div>
+          </ion-item>
+        </div>
+        <div class="bottom-area">
+          <div class="left-part">
+            <ul>
+              <li *ngIf="data.orders.order_status=='Delivered'">
+                <img src="assets/icon/checked.png" loading="lazy" alt="" />
+                {{data.orders.order_status}}
+              </li>
+              <li *ngIf="data.orders.order_status=='Pending'">
+                <img src="../../assets/icon/wall-clock.png" loading="lazy" alt="" />
+                {{data.orders.order_status}}
+              </li>
+            </ul>
+
+          </div>
+          <div class="right-part">
+            <ul>
+              <li>
+                <img src="assets/icon/refresh.png" loading="lazy" alt="" />
+                re-order
+              </li>
+            </ul>
+          </div>
+        </div>
+      </ion-list>
+    </div>
+  </div>
+
+</ion-content>

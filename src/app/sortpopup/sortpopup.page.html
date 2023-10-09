@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Sort</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="dark" (click)="closeModal()">
+        <ion-icon slot="end" name="close-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="main-wrapper">
+    <ion-list>
+      <ion-radio-group>
+        <ion-item>
+          <ion-label>Price high to low</ion-label>
+          <ion-radio value="high"></ion-radio>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>Price low to high</ion-label>
+          <ion-radio value="low"></ion-radio>
+        </ion-item>
+    
+        <ion-item no-lines style="border-bottom: none;">
+          <ion-label>Newest </ion-label>
+          <ion-radio value="Newest "></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+  </div>
+</ion-content>
+<ion-footer mode="ios">
+  <div class="high">
+    <ion-button fill="outline">Clear All</ion-button>
+    <ion-button>Apply Filter</ion-button>
+  </div>
+</ion-footer>

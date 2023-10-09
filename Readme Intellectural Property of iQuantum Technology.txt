@@ -1,0 +1,1 @@
+This software code is intellectual property of iQuantum Technology Private Limited India

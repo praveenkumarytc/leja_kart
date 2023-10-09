@@ -1,0 +1,114 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button icon="chevron-back-outline" defaultHref="/orderlist"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="header">orders details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="orders-list-area">
+    <div class="left-area">
+      <h2><span>Order Id:</span>{{Orders.order_id}}</h2><br>
+      <h2><span>Order Date:</span>{{OrderDetail.oder_date}}</h2>
+      <h2><span>Order Status:</span>{{OrderDetail.individual_product_status}}</h2>
+    </div>
+    <div class="right-area" *ngIf="OrderDetail.individual_product_status!='Canceled'">
+      <ion-button (click)="CancelOrder()">
+        Cancel Order
+      </ion-button>
+    </div>
+  </div>
+  <div class="products-area">
+    <div class="products-wrapper">
+      <div class="product-inner">
+        <div class="product-pic">
+          <img [src]="OrderImage[0]">
+        </div>
+      </div>
+      <div class="product-content">
+        <h2>{{Products.title}}</h2>
+        <p [innerHTML]="Products.description"></p>
+        <div class="seller-area">
+          <p>₹ {{OrderDetail.total_price}}<span class="product">Quantity :{{OrderDetail.quantity}}</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="shipping-details" *ngIf="Orders.delivery_method==='delivery_at_address'">
+    <h2>
+      Shipping Details
+    </h2>
+    <p> {{Delivery_Address.full_name}}</p>
+    <p>
+
+      {{Delivery_Address.house_no}} {{Delivery_Address.flat}} {{Delivery_Address.area}} {{Delivery_Address.city}}
+      {{Delivery_Address.state}} {{Delivery_Address.landmark}} pincode:{{Delivery_Address.pincode}}
+    </p>
+    <p>
+      Phone: {{Delivery_Address.mobile_no}}
+    </p>
+  </div>
+  <div class="shipping-details" *ngIf="Orders.delivery_method==='pickup_from_store'">
+    <h2>
+      Store Details
+    </h2>
+    <p> </p>
+    <p>
+
+      City:{{Delivery_Address.address1}}
+    </p>
+    <p>
+
+    </p>
+  </div>
+  <div class="price-list-area">
+    <div class="wrapper-area">
+      <h2>
+        Payment Method
+        <p>
+          {{Orders.payment_method}}
+        </p>
+
+      </h2>
+      <h2>
+        Product Price
+        <p>
+          ₹ {{OrderDetail.product_price}}
+        </p>
+      </h2>
+
+      <h2>
+        CGST
+        <p>
+          ₹ {{OrderDetail.product_cgst_amount}}
+        </p>
+      </h2>
+      <h2 *ngIf="Orders.delivery_method==='delivery_at_address'">
+        Delivery Charge
+        <p>
+          ₹ {{OrderDetail.delivery_charge}}
+        </p>
+      </h2>
+      <h2>
+        SGST
+        <p>
+          ₹ {{OrderDetail.product_sgst_amount}}
+        </p>
+      </h2>
+    </div>
+    <div class="total-price-area">
+      <h3>
+        total-price-area<span>
+          ₹ {{OrderDetail.total_price}}
+        </span>
+      </h3>
+    </div>
+  </div>
+  <div class="button-area">
+    <ion-button>
+      Download Invoice
+    </ion-button>
+  </div>
+</ion-content>

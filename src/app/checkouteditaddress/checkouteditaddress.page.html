@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button icon="chevron-back-outline" defaultHref="/checkout"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="header">edit address</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="form-wrapper">
+    <ion-list>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-input type="text" placeholder="FullName" [(ngModel)]="fullname"></ion-input>
+      </ion-item>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-input type="number" placeholder="Mobile No" [(ngModel)]="mobile_no"></ion-input>
+      </ion-item>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-input type="text" placeholder="State" [(ngModel)]="state"></ion-input>
+      </ion-item>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-input type="number" placeholder="Pincode" maxlength="6" [(ngModel)]=" pincode"></ion-input>
+      </ion-item>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-input type="text" placeholder="City" [(ngModel)]="city"></ion-input>
+      </ion-item>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-input type="text" placeholder="Area" [(ngModel)]="area"></ion-input>
+      </ion-item>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-input type="text" placeholder="Flat" [(ngModel)]=" flat"></ion-input>
+      </ion-item>
+       <ion-item lines="none" class="ion-no-padding">
+        <ion-input type="text" placeholder="House Number" [(ngModel)]= "house_no"></ion-input>
+      </ion-item>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-input type="text" placeholder="LandMark" [(ngModel)]="landmark"></ion-input>
+      </ion-item>
+    </ion-list>
+    <div class="button-area">
+      <ion-button (click)="Edit_Address()">Submit</ion-button>
+    </div>
+    </div>
+    <!-- <ion-button (click)="presentPopover($event)">Click Me</ion-button> -->
+<!-- <ion-popover #popover [isOpen]="isOpen" (didDismiss)="isOpen = false">
+  <ng-template>
+    <ion-content class="ion-padding">Hello World!</ion-content>
+  </ng-template>
+</ion-popover> -->
+</ion-content>

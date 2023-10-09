@@ -1,0 +1,175 @@
+ion-content {
+  .top {
+    padding: 11px;
+    float: left;
+    width: 100%;
+
+    .product1 {
+      margin-bottom: 18px;
+      float: left;
+      width: 100%;
+
+      .products-wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        box-shadow: rgb(0 0 0 / 20%) 0px 3px 1px -2px, rgb(0 0 0 / 14%) 0px 2px 2px 0px, rgb(0 0 0 / 12%) 0px 1px 5px 0px;
+        padding: 8px;
+        border-radius: 10px;
+        overflow: hidden;
+
+
+        .product-inner {
+          position: relative;
+          background: #FFFFFF;
+          border-radius: 20px;
+          padding: 9px 6px 6px 6px;
+
+          .product-pic {
+            position: relative;
+            text-align: center;
+
+            img {
+                    // width: 96px;
+                    // height: 96px;
+                    // object-fit: cover;
+
+                    width: 100%;
+                    height: 126px;
+                    object-fit: cover;
+                    border-radius: 5px;
+            }
+          }
+        }
+
+        span {
+          width: 41px;
+          height: 41px;
+          background-color: #F25C08;
+          color: #fff;
+          position: absolute;
+          border-radius: 50%;
+          font-size: 8px;
+          right: -11%;
+          z-index: 999;
+          bottom: 87%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .product-content {
+          position: relative;
+
+          h2 {
+            text-align: left;
+            color: #141414;
+            font-size: 14px;
+            text-transform: capitalize;
+            font-weight: 500;
+            line-height: 21px;
+            margin: 12px 0 18px 0;
+          }
+
+          .seller-area {
+            position: relative;
+
+            p {
+              display: flex;
+              align-items: center;
+              color: #061C05;
+              font-weight: 600;
+              font-size: 14px;
+              text-align: left;
+              line-height: 16px;
+              text-transform: capitalize;
+              padding-bottom: 16px;
+              border-bottom: 1px solid #061C05;
+
+              span {
+                color: #F25C08;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 16px;
+                margin-left: 5px;
+                text-transform: capitalize;
+              }
+
+              .product {
+                width: auto;
+                height: auto;
+                background-color: transparent;
+                position: relative;
+                right: 0;
+                bottom: 0;
+                text-transform: capitalize;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                white-space: nowrap;
+                border-radius: 0;
+              }
+            }
+          }
+
+          .price-area {
+            position: relative;
+            text-align: left;
+
+            h3 {
+              color: #061C05;
+              font-weight: 700;
+              line-height: 19px;
+              font-size: 16px;
+              margin: 13px 0 12px 0;
+              display: flex;
+
+              span {
+                text-decoration: line-through;
+                color: #5A5A5A;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 16px;
+                margin-left: 11px;
+              }
+
+              .price {
+                width: auto;
+                height: auto;
+                background-color: transparent;
+                position: relative;
+                right: 0;
+                bottom: 0;
+              }
+            }
+          }
+
+          .rating-area {
+            position: relative;
+
+            ul {
+              display: flex;
+              align-items: center;
+              justify-content: flex-start;
+
+              li {
+                color: #061C05;
+                font-size: 12px;
+                font-weight: 400;
+                line-height: 14px;
+                margin-right: 6px;
+
+                svg {
+                  width: 13px;
+                  height: 13px;
+                  fill: #061C05;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

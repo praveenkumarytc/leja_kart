@@ -1,0 +1,72 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button
+          icon="chevron-back-outline"
+          defaultHref=""
+        ></ion-back-button>
+      </ion-buttons>
+      <ion-title>Product Rating-Review</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <div class="review-wrapper">
+      <div class="header-area">
+        <h2>Review area</h2>
+        <div class="star-area">
+          <ul>
+            <li>
+              <ion-rating [(ngModel)]="rate" size="default"  (ngModelChange)="onRatingChange($event)"> 
+
+              </ion-rating> 
+            </li>
+           
+          </ul>
+        </div>
+       
+      </div>
+    
+      <div class="header-area">
+        <h4>
+          Post A Comment
+        </h4>
+      </div>
+      <div class="form-inner">
+        <ion-list lines="none">
+          <ion-item class="ion-no-padding">
+            <ion-label position="floating">comment here</ion-label>
+            <ion-textarea rows="4" value="Enter your comment here" [(ngModel)]="comment"></ion-textarea>
+          </ion-item>
+        </ion-list>
+        <div class="button-area">
+          <ion-button class="submit-btn" (click)="Product_Review()" >submit</ion-button>
+        </div>
+      </div>
+    </div>
+    <div class="info-wrapper description-block">
+      <div class="ion-padding">
+          <h5>Reviews </h5>
+          <p class="rating">4/5.0
+              <span>
+           
+              </span>
+          </p>
+          <div class="rate-individual" *ngFor="let data of Fetch_Review">
+              <h6><span>C</span>{{data.user_details.name}}</h6>
+              <small>{{data.review_date}}</small>
+              <p class="rating">
+                  <span>
+                 
+                  <ion-rating [rate]="data.ratings" size="small" readonly="true" > </ion-rating> 
+              </span>
+              </p>
+              <p>{{data.review}}</p>
+          </div> 
+         
+      </div>
+  </div>  
+  
+  
+  </ion-content>        
+  
